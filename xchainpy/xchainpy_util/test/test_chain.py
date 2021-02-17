@@ -1,6 +1,7 @@
 import pytest
 from xchainpy.xchainpy_util import chain
 
+
 class TestChain:
 
     def test_is_chain(self):

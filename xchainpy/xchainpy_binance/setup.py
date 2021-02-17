@@ -1,12 +1,12 @@
 from setuptools import setup
 
+
 def install_requires():
     requires = [
         'secp256k1==0.13.2',
         'pytest==6.1.2',
         'mnemonic==0.19',
-        'python_binance_chain==0.1.20',
-        'pywallet==0.1.0',
+        'python-binance-chain @ git+https://github.com/hoodieonwho/python-binance-chain.git@6c23fac4192493ae78ae440be76d4894c277744d',
         'binance_chain==1.0.0'
     ]
     return requires
