@@ -1,13 +1,12 @@
 from xchainpy.xchainpy_util.chain import is_chain
 
-
 class Asset:
-    _chain = None  # "BNB" | "BTC" | "ETH" | "THOR" | "GAIA" | "POLKA"
+    _chain = None # "BNB" | "BTC" | "ETH" | "THOR" | "GAIA" | "POLKA"
     _symbol = _ticker = '' 
 
-    def __init__(self, chain, symbol, ticker=''):
+    def __init__(self, chain, symbol, ticker = ''):
         """
-        :param chain: chain type
+        :param chian: chain type
         :type chain: str
         :param symbol: symbol name
         :type symbol: str
@@ -30,8 +29,9 @@ class Asset:
     @classmethod
     def from_str(cls, asset_str):
         chain = asset_str[0:asset_str.index('.')]
-        symbol = asset_str[asset_str.index('.')+1:]
+        symbol = asset_str[asset_str.index('.'):]
         return Asset(chain, symbol)
+
 
     def __str__(self):
         """Get an asset from a string
@@ -39,6 +39,7 @@ class Asset:
         :returns: the asset (BNB.BNB or BNB.RUNE)
         """
         return f'{self.chain}.{self.symbol}'
+
 
     def __eq__(self, asset):
         """get are two assets equal or not
@@ -50,7 +51,7 @@ class Asset:
         return str(self) == str(asset)
 
     def __getitem__(self, item):
-        return getattr(self, item)
+         return getattr(self, item)
 
     @property
     def chain(self):

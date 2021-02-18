@@ -12,7 +12,6 @@ POLKADOTCHAIN = "POLKA"
 
 chains = ["BNB", "BTC", "ETH", "THOR", "GAIA", "POLKA"]
 
-
 def is_chain(chain):
     """Is the argument a chain or not
 
